@@ -9,7 +9,8 @@ def lookup(name: str) -> str:
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
     template = """
     Given the full name {name_of_person} I want you to find a link to their Twitter profile page, \
-    and extract the their username in your final answer and only the person's username.
+    and extract the their username in your final answer and only the person's username. \
+    Generally, the username could be found in the URL. Just extract that.
     """
     tools_for_agent = [
         Tool(
